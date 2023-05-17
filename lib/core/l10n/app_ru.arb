@@ -1,0 +1,27 @@
+{
+    "appName": "SocialSquad",
+    "buttonStartText": "Начать",
+    "phoneNumber": "Номер",
+    "nextButtonText": "Далее",
+    "yourPhoneNumber": "Ваш номер телефона",
+    "descriptionPhoneNumberField": "Напишите ваш номер телефона, чтобы мы могли отправить код для подтверждения личности.",
+    
+    "acceptPhoneNumber": "Подтверждение",
+    "enterCode": "Введите код подтверждения",
+    "codeSendOnPhoneNumber": "Код был отправлен по номеру {phoneNumber1}",
+    "resendCodeVia": "Отправить код повторно можно будет через {second1} секунд.",
+    "resendCode": "Отправить код повторно",
+    
+    "yourNickName": "Твой никнейм",
+    "signUp": "Регистрация",
+    "yourCity": "Твой город",
+    "complete": "Завершить",
+
+    "thisWeek": "На этой неделе",
+    "all": "Все", 
+
+    "poster": "Афиша",
+    "map": "Карта",
+    "profile": "Профиль"
+    
+}

@@ -1,0 +1,27 @@
+{
+    "appName": "SocialSquad",
+    "buttonStartText": "Get started",
+    "phoneNumber": "Phone Number",
+    "nextButtonText": "Next",
+    "yourPhoneNumber": "Your Phone Number",
+    "descriptionPhoneNumberField": "Enter your phone number so we can send a verification code for identity confirmation.",
+
+    "acceptPhoneNumber": "Confirmation",
+    "enterCode": "Enter Confirmation Code",
+    "codeSendOnPhoneNumber": "Code has been sent to {phoneNumber}",
+    "resendCodeVia": "You can resend the code in {second} seconds.",
+    "resendCode": "Resend Code",
+
+    "yourNickName": "Your Nickname",
+    "signUp": "Sign Up",
+    "yourCity": "Your City",
+    "complete": "Complete",
+
+    "thisWeek": "This Week",
+    "all": "All",
+    
+    "poster": "Poster",
+    "map": "Map",
+    "profile": "Profile"
+    
+}
