@@ -8,9 +8,9 @@
 
     "acceptPhoneNumber": "Confirmation",
     "enterCode": "Enter Confirmation Code",
-    "codeSendOnPhoneNumber": "Code has been sent to {phoneNumber}",
-    "resendCodeVia": "You can resend the code in {second} seconds.",
     "resendCode": "Resend Code",
+    "codeSendOnPhoneNumber": "Code has been sent to {phoneNumber}",
+    "resendCodeVia": "You can resend the code in {seconds} seconds.",
 
     "yourNickName": "Your Nickname",
     "signUp": "Sign Up",

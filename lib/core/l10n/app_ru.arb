@@ -8,10 +8,10 @@
     
     "acceptPhoneNumber": "Подтверждение",
     "enterCode": "Введите код подтверждения",
-    "codeSendOnPhoneNumber": "Код был отправлен по номеру {phoneNumber1}",
-    "resendCodeVia": "Отправить код повторно можно будет через {second1} секунд.",
     "resendCode": "Отправить код повторно",
-    
+    "codeSendOnPhoneNumber": "Код был отправлен по номеру {phoneNumber}",
+    "resendCodeVia": "Отправить код повторно можно будет через {seconds} секунд.",
+
     "yourNickName": "Твой никнейм",
     "signUp": "Регистрация",
     "yourCity": "Твой город",
