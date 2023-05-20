@@ -5,9 +5,13 @@ import 'package:socialsquad/core/l10n/all_locale.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:socialsquad/core/domain/providers/app_locator.dart';
+import 'package:socialsquad/core/domain/providers/service_locator.dart';
+import 'package:socialsquad/core/theme/theme.dart';
 
-final localeProvider = StateProvider((ref) => 0);
+final ServiceLocator serviceLocator = AppLocator();
 void main() {
+  serviceLocator.init();
   runApp(
     const ProviderScope(
       child: MyApp(),
@@ -20,9 +24,9 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final localeIndex = ref.watch(localeProvider);
+    final state = ref.watch(serviceLocator.settingsProvider);
     return MaterialApp(
-      locale: AppLocalizations.supportedLocales[localeIndex],
+      locale: state.locale,
       title: 'Flutter Demo',
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -31,10 +35,7 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: AllLocale.all,
-      theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.blue,
-      ),
+      theme: state.theme,
       home: const Start(),
     );
   }
@@ -51,6 +52,7 @@ class _StartState extends ConsumerState<Start> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final settingsProvider = ref.watch(serviceLocator.settingsProvider);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -58,20 +60,19 @@ class _StartState extends ConsumerState<Start> {
       ),
       body: Column(
         children: [
-          Text(l10n.codeSendOnPhoneNumber("+7(918)991-83-10")),
+          Text(
+            l10n.codeSendOnPhoneNumber("+7(918)991-83-10"),
+            style: Const.fontSize10,
+          ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FloatingActionButton(
-                child: const Text("EN"),
+                child: Text(l10n.l10n),
                 onPressed: () {
-                  ref.read(localeProvider.notifier).update((state) => 0);
-                },
-              ),
-              FloatingActionButton(
-                backgroundColor: Colors.red,
-                child: const Text("RU"),
-                onPressed: () {
-                  ref.read(localeProvider.notifier).update((state) => 1);
+                  ref
+                      .read(serviceLocator.settingsProvider.notifier)
+                      .changeLocale(settingsProvider.locale);
                 },
               ),
             ],
