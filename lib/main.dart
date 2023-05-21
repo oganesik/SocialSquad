@@ -7,10 +7,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:socialsquad/core/domain/providers/app_locator.dart';
 import 'package:socialsquad/core/domain/providers/service_locator.dart';
+import 'package:socialsquad/core/router/router.dart';
 import 'package:socialsquad/core/theme/theme.dart';
 
-final ServiceLocator serviceLocator = AppLocator();
+late final ServiceLocator serviceLocator;
 void main() {
+  serviceLocator = AppLocator();
   serviceLocator.init();
   runApp(
     const ProviderScope(
@@ -25,7 +27,7 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(serviceLocator.settingsProvider);
-    return MaterialApp(
+    return MaterialApp.router(
       locale: state.locale,
       title: 'Flutter Demo',
       localizationsDelegates: const [
@@ -36,49 +38,49 @@ class MyApp extends ConsumerWidget {
       ],
       supportedLocales: AllLocale.all,
       theme: state.theme,
-      home: const Start(),
+      routerConfig: AppRouter.router,
     );
   }
 }
 
-class Start extends ConsumerStatefulWidget {
-  const Start({Key? key}) : super(key: key);
+// class StartScreen extends ConsumerStatefulWidget {
+//   const StartScreen({super.key});
 
-  @override
-  ConsumerState<Start> createState() => _StartState();
-}
+//   @override
+//   ConsumerState<ConsumerStatefulWidget> createState() => _StartScreenState();
+// }
 
-class _StartState extends ConsumerState<Start> {
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context);
-    final settingsProvider = ref.watch(serviceLocator.settingsProvider);
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(l10n.appName),
-      ),
-      body: Column(
-        children: [
-          Text(
-            l10n.codeSendOnPhoneNumber("+7(918)991-83-10"),
-            style: Const.fontSize10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              FloatingActionButton(
-                child: Text(l10n.l10n),
-                onPressed: () {
-                  ref
-                      .read(serviceLocator.settingsProvider.notifier)
-                      .changeLocale(settingsProvider.locale);
-                },
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
+// class _StartScreenState extends ConsumerState<StartScreen> {
+//   @override
+//   Widget build(BuildContext context) {
+//     final l10n = AppLocalizations.of(context);
+//     final settingsProvider = ref.watch(serviceLocator.settingsProvider);
+//     return Scaffold(
+//       appBar: AppBar(
+//         centerTitle: true,
+//         title: Text(l10n.appName),
+//       ),
+//       body: Column(
+//         children: [
+//           Text(
+//             l10n.codeSendOnPhoneNumber("+7(918)991-83-10"),
+//             style: Const.fontSize10,
+//           ),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               FloatingActionButton(
+//                 child: Text(l10n.l10n),
+//                 onPressed: () {
+//                   ref
+//                       .read(serviceLocator.settingsProvider.notifier)
+//                       .changeLocale(settingsProvider.locale);
+//                 },
+//               ),
+//             ],
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }
