@@ -19,6 +19,9 @@ abstract class Const {
       TextStyle(fontWeight: FontWeight.w400, fontSize: 24);
   static const fontSize32 =
       TextStyle(fontWeight: FontWeight.w400, fontSize: 32);
+  static const double margin5 = 21;
+  static const double ratioH = 0.0011848341232227;
+  static const double ratioW = 0.0025641025641026;
   static const darkBackground = Color(0xFF1C1C1E);
   static const white = Colors.white;
   static const phiol = Color(0xFF5A33DB);

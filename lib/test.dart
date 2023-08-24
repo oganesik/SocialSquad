@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:socialsquad/core/domain/providers/app_locator.dart';
-import 'package:socialsquad/core/domain/providers/service_locator.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:socialsquad/core/domain/providers/app_locator.dart';
+import 'package:socialsquad/core/router/screens.dart';
 import 'package:socialsquad/core/theme/theme.dart';
 import 'package:go_router/go_router.dart';
-import 'package:socialsquad/main.dart';
 
 class StartScreen extends ConsumerStatefulWidget {
   const StartScreen({super.key});

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 abstract class AppThemes {
   static final darkTheme = ThemeData(
+    fontFamily: 'Inter',
     hintColor: Const.darkText,
     scaffoldBackgroundColor: Const.phiol,
     colorScheme: const ColorScheme(
